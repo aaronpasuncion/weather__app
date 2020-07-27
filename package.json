@@ -1,0 +1,38 @@
+{
+  "name": "weather_app",
+  "version": "1.0.0",
+  "description": "weather app",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "weather_app"
+  },
+  "keywords": [
+    "weather",
+    "app",
+    "aaron",
+    "asuncion",
+    "aaronpasuncion",
+    "aaronasuncion",
+    "html",
+    "html5",
+    "css",
+    "css3",
+    "js",
+    "javascript",
+    "es5",
+    "es6",
+    "sass",
+    "scss",
+    "wepback",
+    "babel",
+    "api",
+    "portfolio",
+    "project"
+  ],
+  "author": "Aaron P Asuncion",
+  "license": "ISC"
+}
