@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <!-- <div class="bg-overlay"></div> -->
+      <main>
+        <section class="current-day">
+          <div class="current-day__container">
+            <!-- Left side -->
+            <section class="current-day__summary">
+              <header class="current-day__summary--header">
+                <h3 class="heading-tertiary">Toronto</h3>
+                <p class="text text--secondary">July 27th, 2020</p>
+              </header>
+              <div class="current-day__forecast">
+                <div class="current-day__temp">
+                  <h2 class="heading-primary current-day__cur-temp">
+                    26&deg;c
+                  </h2>
+                  <p class="text current-day__desc">
+                    Sunny
+                  </p>
+                </div>
+                <div class="current-day__img">
+                  ICON
+                </div>
+              </div>
+            </section>
+            <!-- right side -->
+            <section class="current-day__info">
+              <div class="current-day__statistics">
+                <div class="current-day__stat current-day__feels-like">
+                  <h4 class="heading-quatenary current-day__feels-like--val">
+                    33&deg;c
+                  </h4>
+                  <p class="text text--secondary">feels like</p>
+                </div>
+                <div class="current-day__stat current-day__humidity">
+                  <h4 class="heading-quatenary current-day__humidity--val">
+                    70
+                  </h4>
+                  <p class="text text--secondary">humidity</p>
+                </div>
+                <div class="current-day__stat current-day__winds">
+                  <h4 class="heading-quatenary current-day__winds--val">3.6</h4>
+                  <p class="text text--secondary">winds (km/h)</p>
+                </div>
+              </div>
+              <div class="current-day__hourly">
+                <!-- create javascript function that gets the next hour, then loops
+                through the next 7 hours to display the hourly forecast for the next 8 hours.
+                inject the html
+                -->
+                <div class="current-day__hourly-forecast">
+                  <p class="current-day__hour-time text--tertiary">2pm</p>
+                  <div class="current-day__hour-icon">ICON</div>
+                  <p class="current-day__hour-temp text--tertiary">28&deg;c</p>
+                </div>
+                <div class="current-day__hourly-forecast">
+                  <p class="current-day__hour-time text--tertiary">2pm</p>
+                  <div class="current-day__hour-icon">ICON</div>
+                  <p class="current-day__hour-temp text--tertiary">28&deg;c</p>
+                </div>
+                <div class="current-day__hourly-forecast">
+                  <p class="current-day__hour-time text--tertiary">2pm</p>
+                  <div class="current-day__hour-icon">ICON</div>
+                  <p class="current-day__hour-temp text--tertiary">28&deg;c</p>
+                </div>
+                <div class="current-day__hourly-forecast">
+                  <p class="current-day__hour-time text--tertiary">2pm</p>
+                  <div class="current-day__hour-icon">ICON</div>
+                  <p class="current-day__hour-temp text--tertiary">28&deg;c</p>
+                </div>
+                <div class="current-day__hourly-forecast">
+                  <p class="current-day__hour-time text--tertiary">2pm</p>
+                  <div class="current-day__hour-icon">ICON</div>
+                  <p class="current-day__hour-temp text--tertiary">28&deg;c</p>
+                </div>
+                <div class="current-day__hourly-forecast">
+                  <p class="current-day__hour-time text--tertiary">2pm</p>
+                  <div class="current-day__hour-icon">ICON</div>
+                  <p class="current-day__hour-temp text--tertiary">28&deg;c</p>
+                </div>
+                <div class="current-day__hourly-forecast">
+                  <p class="current-day__hour-time text--tertiary">2pm</p>
+                  <div class="current-day__hour-icon">ICON</div>
+                  <p class="current-day__hour-temp text--tertiary">28&deg;c</p>
+                </div>
+                <div class="current-day__hourly-forecast">
+                  <p class="current-day__hour-time text--tertiary">2pm</p>
+                  <div class="current-day__hour-icon">ICON</div>
+                  <p class="current-day__hour-temp text--tertiary">28&deg;c</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+        <section class="upcoming-weather">
+          <h3 class="heading-tertiary">Next 7 days</h3>
+          <!-- do the same thing with the hourly forecast -->
+          <div class="upcoming-weather__forecast">
+            <div class="upcoming-weather__day">
+              <div class="upcoming-weather__icon">ICON</div>
+              <h4 class="upcoming-weather__temp">30&deg;</h4>
+              <p class="text text--secondary">TUE</p>
+            </div>
+            <div class="upcoming-weather__day">
+              <div class="upcoming-weather__icon">ICON</div>
+              <h4 class="upcoming-weather__temp">30&deg;</h4>
+              <p class="text text--secondary">WED</p>
+            </div>
+            <div class="upcoming-weather__day">
+              <div class="upcoming-weather__icon">ICON</div>
+              <h4 class="upcoming-weather__temp">30&deg;</h4>
+              <p class="text text--secondary">THU</p>
+            </div>
+            <div class="upcoming-weather__day">
+              <div class="upcoming-weather__icon">ICON</div>
+              <h4 class="upcoming-weather__temp">30&deg;</h4>
+              <p class="text text--secondary">FRI</p>
+            </div>
+            <div class="upcoming-weather__day">
+              <div class="upcoming-weather__icon">ICON</div>
+              <h4 class="upcoming-weather__temp">30&deg;</h4>
+              <p class="text text--secondary">SAT</p>
+            </div>
+            <div class="upcoming-weather__day">
+              <div class="upcoming-weather__icon">ICON</div>
+              <h4 class="upcoming-weather__temp">30&deg;</h4>
+              <p class="text text--secondary">SUN</p>
+            </div>
+            <div class="upcoming-weather__day">
+              <div class="upcoming-weather__icon">ICON</div>
+              <h4 class="upcoming-weather__temp">30&deg;</h4>
+              <p class="text text--secondary">MON</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../src/js/app.js"></script>
+  </body>
+</html>

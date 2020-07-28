@@ -1,0 +1,61 @@
+/* CURRENT DAY */
+.current-day {
+  &__container {
+    display: flex;
+  }
+
+  // current day summary box (LEFT SIDE)
+  &__summary {
+    padding: 2rem;
+    box-shadow: $shadow;
+    border-radius: $radius;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__forecast {
+    display: flex;
+    align-items: center;
+  }
+
+  // current day info (RIGHT SIDE)
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // statistics
+  &__statistics {
+    display: flex;
+  }
+
+  &__stat {
+    text-align: center;
+    box-shadow: $shadow;
+    border-radius: $radius;
+    padding: 2rem;
+  }
+
+  // hourly forecast
+  &__hourly {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: $shadow;
+    border-radius: $radius;
+  }
+}
+
+/* UPCOMING WEATHER */
+.upcoming-weather {
+  &__forecast {
+    display: flex;
+  }
+
+  // upcoming day box
+  &__day {
+    border-radius: $radius;
+    box-shadow: $shadow;
+    padding: 1rem 2rem;
+  }
+}
