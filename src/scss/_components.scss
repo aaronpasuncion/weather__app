@@ -2,60 +2,120 @@
 .current-day {
   &__container {
     display: flex;
+    justify-content: space-between;
   }
 
   // current day summary box (LEFT SIDE)
   &__summary {
-    padding: 2rem;
+    padding: 2rem 4rem;
     box-shadow: $shadow;
     border-radius: $radius;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 20vw;
+    margin-right: 3rem;
+    background: linear-gradient(
+        -225deg,
+        rgba(#cbbacc, 0.85) 0%,
+        rgba(#2580b3, 0.85) 100%
+      ),
+      url("../img/bg.jpg") center no-repeat;
+    background-size: cover;
   }
 
   &__forecast {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  &__date {
+    margin: 0;
+  }
+
+  &__desc {
+    // typography
+    font-weight: 300;
+    font-size: 3rem;
+    margin: 0;
+    margin-top: -1rem;
   }
 
   // current day info (RIGHT SIDE)
   &__info {
     display: flex;
     flex-direction: column;
+    width: 45vw;
   }
 
   // statistics
   &__statistics {
     display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
   }
 
   &__stat {
     text-align: center;
     box-shadow: $shadow;
     border-radius: $radius;
-    padding: 2rem;
+    padding: 2rem 4rem;
+    width: 33.3333%;
+
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
   }
 
   // hourly forecast
   &__hourly {
-    padding: 2rem;
     display: flex;
     justify-content: space-between;
     box-shadow: $shadow;
     border-radius: $radius;
+    overflow: hidden;
+    padding: 3rem 5rem;
+  }
+
+  &__hourly-forecast {
+    text-align: center;
+    &:not(:last-child) {
+      margin-right: 5rem;
+    }
+  }
+
+  &__hour-icon {
+    margin: 1rem 0;
   }
 }
 
 /* UPCOMING WEATHER */
 .upcoming-weather {
-  &__forecast {
+  h3 {
+    margin-bottom: 2rem;
+  }
+  &__container {
+    // padding: 2rem;
     display: flex;
+    justify-content: space-between;
+  }
+  &__forecast {
+    flex: 0 0 14%;
   }
 
   // upcoming day box
   &__day {
     border-radius: $radius;
     box-shadow: $shadow;
-    padding: 1rem 2rem;
+    padding: 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__icon {
+    margin-bottom: 2rem;
   }
 }

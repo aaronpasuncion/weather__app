@@ -1,15 +1,27 @@
 .site-wrapper {
   height: 100vh;
   width: 100%;
-  // background: url("../img/bg.jpg") center no-repeat;
-  // background-size: cover;
+}
+
+.main-content {
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .bg-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
   opacity: 1;
   height: 100%;
   width: 100%;
@@ -17,10 +29,11 @@
 
 .current-day {
   width: 100%;
+  margin-bottom: 3rem;
 }
 
 .upcoming-weather {
-  padding: 2rem;
-  box-shadow: $shadow;
-  border-radius: $radius;
+  width: 100%;
+  // box-shadow: $shadow;
+  // border-radius: $radius;
 }
