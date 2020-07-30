@@ -115,10 +115,13 @@ h4 {
   text-align: center;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
   border-radius: 15px;
-  padding: 2rem 4rem;
+  padding: 4rem;
   width: 33.3333%; }
   .current-day__stat:not(:last-child) {
     margin-right: 3rem; }
+
+.current-day__stat-desc {
+  margin: 0; }
 
 .current-day__hourly {
   display: flex;
@@ -158,3 +161,6 @@ h4 {
 
 .upcoming-weather__icon {
   margin-bottom: 2rem; }
+
+.upcoming-weather__temp {
+  margin-left: 1rem; }

@@ -60,12 +60,16 @@
     text-align: center;
     box-shadow: $shadow;
     border-radius: $radius;
-    padding: 2rem 4rem;
+    padding: 4rem;
     width: 33.3333%;
 
     &:not(:last-child) {
       margin-right: 3rem;
     }
+  }
+
+  &__stat-desc {
+    margin: 0;
   }
 
   // hourly forecast
@@ -117,5 +121,9 @@
 
   &__icon {
     margin-bottom: 2rem;
+  }
+
+  &__temp {
+    margin-left: 1rem;
   }
 }
