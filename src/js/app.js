@@ -50,6 +50,47 @@ const getTodayDate = () => {
   return todaysDate;
 };
 
+// getTime function that returns the current time
+const getTime = () => {
+  let date, minutes, time;
+  date = new Date();
+  console.log(date.getMinutes());
+  let { hour, timeOfDay } = convertHour(date.getHours());
+  minutes =
+    date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
+  time = `${hour}:${minutes}${timeOfDay}`;
+
+  return time;
+};
+
+// convertHour function that converts 24 hour time to 12 hour time when applicable
+const convertHour = (hour) => {
+  let newHour, timeOfDay;
+
+  // determine the time of day and convert 24 hour time to 12 hour time
+  if (hour >= 12) {
+    timeOfDay = `PM`;
+    if (hour === 12) {
+      newHour = `12`;
+    } else {
+      newHour = `${hour - 12}`;
+    }
+  } else if (hour < 12) {
+    timeOfDay = `AM`;
+    if (hour === 0) {
+      newHour = `12`;
+    } else {
+      newHour = hour;
+    }
+  }
+
+  return {
+    hour: newHour,
+    timeOfDay: timeOfDay,
+  };
+};
+
+// convertToDay function that returns the day of the week
 const convertToDay = (sec) => {
   const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
   let date = new Date(sec * 1000);
@@ -58,27 +99,11 @@ const convertToDay = (sec) => {
   return days[day];
 };
 
-const convertToHour = (sec) => {
+const calculateHourly = (sec) => {
   let date = new Date(sec * 1000);
-  let hours24 = date.getHours();
-  let hoursConverted;
+  let { hour, timeOfDay } = convertHour(date.getHours());
 
-  // if hour > 12, then its PM, but not it is AM, this should apply for 12PM NOON and 00 AM MIDNIGHT
-  if (hours24 >= 12) {
-    if (hours24 === 12) {
-      hoursConverted = `${hours24}pm`;
-    } else {
-      hoursConverted = `${hours24 - 12}pm`;
-    }
-  } else if (hours24 < 12) {
-    if (hours24 === 0) {
-      hoursConverted = `${hours24 - 12}am`;
-    } else {
-      hoursConverted = `${hours24}am`;
-    }
-  }
-
-  return hoursConverted;
+  return `${hour}${timeOfDay}`;
 };
 
 const weather = {};
@@ -107,6 +132,9 @@ async function getWeather() {
     // display the today's date
     elements.currentDate.textContent = getTodayDate();
 
+    // display the current time
+    elements.currentTime.textContent = getTime();
+
     // display the current weather UI
     elements.currentTemp.innerHTML = `${Math.ceil(
       weather.currentWeather.temp
@@ -121,15 +149,28 @@ async function getWeather() {
     elements.curHumidity.textContent = `${weather.currentWeather.humidity}`;
     elements.curWinds.textContent = `${weather.currentWeather.wind_speed}`;
 
+    // currrent weather icon
+    let curHtml = `
+    <img src="./img/weather-icons/${weather.currentWeather.weather[0].icon}.svg" class="current-day__icon icon" alt="${weather.currentWeather.weather[0].description}">
+    `;
+
+    elements.currentIcon.insertAdjacentHTML("beforeend", curHtml);
+
     ////////////////////////////////////
     // HOURLY WEATHER
     for (let hour of weather.hourlyWeather) {
       let html = `
        <div class="current-day__hourly-forecast">
-          <p class="current-day__hour-time text text--tertiary">${convertToHour(
+          <p class="current-day__hour-time text text--tertiary">${calculateHourly(
             hour.dt
           )}</p>
-          <div class="current-day__hour-icon">ICON</div>
+          <div class="current-day__hour-icon">
+            <img src="./img/weather-icons/${
+              hour.weather[0].icon
+            }.svg" class="current-day__hour-icon icon" alt="${
+        hour.weather[0].description
+      }">
+          </div>
           <p class="current-day__hour-temp text text--tertiary">
             ${Math.round(hour.temp)}&deg;
           </p>
@@ -145,7 +186,13 @@ async function getWeather() {
       let html = `
         <div class="upcoming-weather__forecast">
           <div class="upcoming-weather__day">
-            <div class="upcoming-weather__icon">ICON</div>
+            <div class="upcoming-weather__icon">
+              <img src="./img/weather-icons/${
+                day.weather[0].icon
+              }.svg" class="upcoming-weather__icon icon" alt="${
+        day.weather[0].description
+      }">
+            </div>
             <h4 class="heading-quatenary upcoming-weather__temp">
               ${Math.round(day.temp.day)}&deg;
             </h4>

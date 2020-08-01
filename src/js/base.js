@@ -4,6 +4,7 @@ export const elements = {
   currentTemp: document.querySelector(".current-day__cur-temp"),
   currentWeather: document.querySelector(".current-day__desc"),
   currentIcon: document.querySelector(".current-day__img"),
+  currentTime: document.querySelector(".current-day__time"),
   // current stats
   curFeelsLike: document.querySelector(".current-day__feels-like--val"),
   curHumidity: document.querySelector(".current-day__humidity--val"),

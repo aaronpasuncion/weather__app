@@ -75,6 +75,11 @@ h4 {
   display: flex;
   justify-content: space-between; }
 
+.current-day__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
 .current-day__summary {
   padding: 2rem 4rem;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
@@ -95,11 +100,19 @@ h4 {
 .current-day__date {
   margin: 0; }
 
+.current-day__img {
+  margin-bottom: 2rem;
+  transform: scale(2); }
+
 .current-day__desc {
   font-weight: 300;
   font-size: 3rem;
   margin: 0;
   margin-top: -1rem; }
+
+.current-day__icon {
+  width: 10rem;
+  height: 10rem; }
 
 .current-day__info {
   display: flex;
@@ -136,9 +149,6 @@ h4 {
   .current-day__hourly-forecast:not(:last-child) {
     margin-right: 5rem; }
 
-.current-day__hour-icon {
-  margin: 1rem 0; }
-
 /* UPCOMING WEATHER */
 .upcoming-weather h3 {
   margin-bottom: 2rem; }
@@ -148,19 +158,20 @@ h4 {
   justify-content: space-between; }
 
 .upcoming-weather__forecast {
-  flex: 0 0 14%; }
+  flex: 0 0 10%; }
 
 .upcoming-weather__day {
   border-radius: 15px;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
-  padding: 3vw;
+  padding: 2vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center; }
 
-.upcoming-weather__icon {
-  margin-bottom: 2rem; }
-
 .upcoming-weather__temp {
   margin-left: 1rem; }
+
+/* ICON */
+.icon {
+  filter: invert(100%) sepia(0%) saturate(2498%) hue-rotate(39deg) brightness(113%) contrast(87%) opacity(0.8); }

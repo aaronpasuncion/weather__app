@@ -6,6 +6,12 @@
   }
 
   // current day summary box (LEFT SIDE)
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__summary {
     padding: 2rem 4rem;
     box-shadow: $shadow;
@@ -34,12 +40,22 @@
     margin: 0;
   }
 
+  &__img {
+    margin-bottom: 2rem;
+    transform: scale(2);
+  }
+
   &__desc {
     // typography
     font-weight: 300;
     font-size: 3rem;
     margin: 0;
     margin-top: -1rem;
+  }
+
+  &__icon {
+    width: 10rem;
+    height: 10rem;
   }
 
   // current day info (RIGHT SIDE)
@@ -90,7 +106,6 @@
   }
 
   &__hour-icon {
-    margin: 1rem 0;
   }
 }
 
@@ -105,14 +120,14 @@
     justify-content: space-between;
   }
   &__forecast {
-    flex: 0 0 14%;
+    flex: 0 0 10%;
   }
 
   // upcoming day box
   &__day {
     border-radius: $radius;
     box-shadow: $shadow;
-    padding: 3vw;
+    padding: 2vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,10 +135,15 @@
   }
 
   &__icon {
-    margin-bottom: 2rem;
   }
 
   &__temp {
     margin-left: 1rem;
   }
+}
+
+/* ICON */
+.icon {
+  filter: invert(100%) sepia(0%) saturate(2498%) hue-rotate(39deg)
+    brightness(113%) contrast(87%) opacity(0.8);
 }
