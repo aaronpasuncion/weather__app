@@ -53,3 +53,55 @@ h4 {
     font-weight: 300;
   }
 }
+
+/* UTILITY CLASSES */
+.u-mg-0 {
+  margin: 0;
+}
+
+/* ANIMATION UTILITY CLASSES */
+
+.fade-in-content {
+  animation: fade-in 1s forwards !important;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.fade-out-content {
+  animation: fade-out 1s forwards !important;
+}
+
+/* KEYFRAMES */
+
+@keyframes skeleton-loader {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
