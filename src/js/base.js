@@ -17,7 +17,7 @@ export const elements = {
   upcomingWeatherContainer: document.querySelector(
     ".upcoming-weather__container"
   ),
-  dailyWeatherBox: document.querySelectorAll(".upcoming-weather__day"),
+  dailyWeatherBox: document.querySelectorAll(".upcoming-weather__box"),
   // data refresh
   refreshIcon: document.querySelector(".data-refresh"),
   // boxes

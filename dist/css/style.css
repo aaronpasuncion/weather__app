@@ -1,8 +1,7 @@
 /* VARIABLES */
-*,
-*::before,
-*::after {
-  box-sizing: inherit; }
+/* MIXINS */
+* {
+  box-sizing: border-box; }
 
 html {
   font-size: 62.5%;
@@ -10,11 +9,13 @@ html {
 
 body {
   margin: 0;
-  padding: 0 20rem;
-  max-width: 100%;
-  max-height: 100vh;
   background-image: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
-  color: #fff; }
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh; }
+  @media only screen and (max-width: 93.75em) {
+    body {
+      padding: 5vw 0; } }
 
 /* TYPOGRAPHY */
 h1,
@@ -28,16 +29,22 @@ h4 {
   font-size: 6rem; }
 
 .heading-secondary {
-  font-size: 5.6rem; }
-
-.heading-tertiary {
   font-size: 4.4rem; }
 
-.heading-quatenary {
+.heading-tertiary {
   font-size: 3.2rem; }
+
+.heading-quatenary {
+  font-size: 2.4rem; }
 
 .text {
   font-size: 2rem; }
+  @media only screen and (max-width: 48em) {
+    .text {
+      font-size: 1.5rem; } }
+  @media only screen and (max-width: 31.25em) {
+    .text {
+      font-size: 1.25rem; } }
   .text--secondary {
     font-weight: 300; }
 
@@ -47,12 +54,11 @@ h4 {
 
 /* ANIMATION UTILITY CLASSES */
 .fade-in-content {
-  animation: fade-in 1s forwards !important;
-  visibility: hidden;
+  animation: fade-in 1s forwards ease-out !important;
   opacity: 0; }
 
 .fade-out-content {
-  animation: fade-out 1s forwards !important; }
+  animation: fade-out 1s forwards ease-out !important; }
 
 /* KEYFRAMES */
 @keyframes skeleton-loader {
@@ -65,32 +71,36 @@ h4 {
 
 @keyframes fade-in {
   0% {
-    opacity: 0;
-    visibility: hidden; }
+    opacity: 0; }
   100% {
-    opacity: 1;
-    visibility: visible; } }
+    opacity: 1; } }
 
 @keyframes fade-out {
   0% {
-    opacity: 1;
-    visibility: visible; }
+    opacity: 1; }
   100% {
-    opacity: 0;
-    visibility: hidden; } }
+    opacity: 0; } }
 
 .site-wrapper {
-  height: 100vh;
-  width: 100%; }
+  width: 75vw;
+  margin: 0 auto; }
+  @media only screen and (max-width: 75em) {
+    .site-wrapper {
+      width: 85vw; } }
+  @media only screen and (max-width: 75em) {
+    .site-wrapper {
+      width: 90vw; } }
 
 .main-content {
-  width: 75vw;
-  height: 100%;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: 0 auto; }
+  align-items: center; }
+  @media only screen and (max-width: 93.75em) {
+    .main-content {
+      justify-content: flex-start; } }
 
 .bg-overlay {
   position: absolute;
@@ -112,24 +122,46 @@ h4 {
 .current-day__container {
   display: flex;
   justify-content: space-between; }
+  @media only screen and (max-width: 93.75em) {
+    .current-day__container {
+      flex-direction: column; } }
 
 .current-day__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap; }
+  @media only screen and (max-width: 93.75em) {
+    .current-day__header {
+      margin-bottom: 2rem; } }
 
 .current-day__summary {
-  padding: 2rem 4rem;
+  padding: 1.6vw 3.2vw;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 20vw;
+  width: 30%;
   margin-right: 3rem;
   background: linear-gradient(-225deg, rgba(203, 186, 204, 0.85) 0%, rgba(37, 128, 179, 0.85) 100%), url("../img/bg.jpg") center no-repeat;
   background-size: cover; }
+  @media only screen and (max-width: 93.75em) {
+    .current-day__summary {
+      margin-bottom: 3rem;
+      padding: 3rem;
+      width: 100%;
+      background-position: 50% 40%; } }
+  @media only screen and (max-width: 56.25em) {
+    .current-day__summary {
+      padding: 4rem;
+      height: 40vh; } }
+  @media only screen and (max-width: 48em) {
+    .current-day__summary {
+      height: 50vh; } }
+  @media only screen and (max-width: 31.25em) {
+    .current-day__summary {
+      height: 80vh; } }
 
 .current-day__forecast {
   display: flex;
@@ -140,23 +172,29 @@ h4 {
   margin: 0; }
 
 .current-day__img {
-  margin-bottom: 2rem;
-  transform: scale(2); }
+  margin-bottom: 1.6vw;
+  transform: scale(1.5); }
+  @media only screen and (max-width: 93.75em) {
+    .current-day__img {
+      margin-bottom: 0;
+      margin-top: 1rem; } }
 
 .current-day__desc {
   font-weight: 300;
   font-size: 3rem;
   margin: 0;
   margin-top: -1rem; }
+  @media only screen and (max-width: 48em) {
+    .current-day__desc {
+      font-size: 1.5rem; } }
 
 .current-day__icon {
-  width: 10rem;
-  height: 10rem; }
+  width: 8vw;
+  height: 8vw; }
 
 .current-day__info {
   display: flex;
-  flex-direction: column;
-  width: 50vw; }
+  flex-direction: column; }
 
 .current-day__statistics {
   display: flex;
@@ -164,10 +202,13 @@ h4 {
   margin-bottom: 3rem; }
 
 .current-day__stat {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
   border-radius: 15px;
-  padding: 4rem;
+  padding: 3.2vw;
   width: 33.3333%; }
   .current-day__stat:not(:last-child) {
     margin-right: 3rem; }
@@ -181,12 +222,21 @@ h4 {
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   overflow: hidden;
-  padding: 3rem 2rem; }
+  padding: 2.4vw 1.6vw; }
+  @media only screen and (max-width: 93.75em) {
+    .current-day__hourly {
+      padding: 2.4vw; } }
+  @media only screen and (max-width: 56.25em) {
+    .current-day__hourly {
+      padding: 3.2vw; } }
 
 .current-day__hourly-forecast {
   text-align: center; }
   .current-day__hourly-forecast:not(:last-child) {
     margin-right: 1rem; }
+  @media only screen and (max-width: 48em) {
+    .current-day__hourly-forecast:not(:last-child) {
+      margin-right: 3rem; } }
 
 /* UPCOMING WEATHER */
 .upcoming-weather h3 {
@@ -195,33 +245,64 @@ h4 {
 .upcoming-weather__container {
   display: flex;
   justify-content: space-between; }
+  @media only screen and (max-width: 48em) {
+    .upcoming-weather__container {
+      flex-direction: column; } }
 
-.upcoming-weather__forecast {
-  flex: 0 0 10vw; }
-
-.upcoming-weather__day {
+.upcoming-weather__box {
   border-radius: 15px;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
-  padding: 2vw;
+  padding: 1.6vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center; }
+  @media only screen and (max-width: 93.75em) {
+    .upcoming-weather__box {
+      padding: 1.4vw; } }
+  @media only screen and (max-width: 75em) {
+    .upcoming-weather__box {
+      padding: 2vw; } }
+  @media only screen and (max-width: 56.25em) {
+    .upcoming-weather__box {
+      padding: 0; } }
+  @media only screen and (max-width: 48em) {
+    .upcoming-weather__box {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 1rem;
+      padding: 0; } }
 
 .upcoming-weather__temp {
   margin-left: 1rem; }
+  @media only screen and (max-width: 48em) {
+    .upcoming-weather__temp {
+      order: 1; } }
+
+@media only screen and (max-width: 48em) {
+  .upcoming-weather__day {
+    order: -1; } }
 
 /* ICON */
 .icon {
-  width: 5vw;
-  height: 5vw;
+  width: 6vw;
+  height: 6vw;
   filter: invert(100%) sepia(0%) saturate(2498%) hue-rotate(39deg) brightness(113%) contrast(87%) opacity(0.8); }
+  @media only screen and (max-width: 75em) {
+    .icon {
+      width: 8vw;
+      height: 8vw; } }
+  @media only screen and (max-width: 56.25em) {
+    .icon {
+      width: 10vw;
+      height: 10vw; } }
 
 .data-refresh {
   display: inline-block;
   margin-left: 1.5rem;
-  height: 1.25vw;
-  width: 1.25vw;
+  height: 2rem;
+  width: 2rem;
   cursor: pointer;
   transition: 0.2s all; }
   .data-refresh:hover, .data-refresh:active {
@@ -229,7 +310,7 @@ h4 {
 
 /* BOX */
 .skeleton-loader {
-  animation: fade-in 1s ease-in forwards;
+  animation: fade-in 1s ease-out forwards;
   opacity: 0;
   position: relative;
   overflow: hidden; }

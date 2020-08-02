@@ -2,10 +2,38 @@
 $shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
 $radius: 15px;
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+/* MIXINS */
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 31.25em) {
+      @content;
+    } //500px
+  }
+  @if $breakpoint == tab-small {
+    @media only screen and (max-width: 48em) {
+      @content;
+    } //768px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == laptop {
+    @media only screen and (max-width: 93.75em) {
+      @content;
+    } //1800
+  }
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -15,11 +43,14 @@ html {
 
 body {
   margin: 0;
-  padding: 0 20rem;
-  max-width: 100%;
-  max-height: 100vh;
   background-image: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
+  background-size: cover;
   color: #fff;
+  min-height: 100vh;
+
+  @include respond(laptop) {
+    padding: 5vw 0;
+  }
 }
 
 /* TYPOGRAPHY */
@@ -31,23 +62,35 @@ h4 {
   margin: 0;
 }
 .heading-primary {
+  // font-size: 4.13vw;
   font-size: 6rem;
 }
 
 .heading-secondary {
-  font-size: 5.6rem;
-}
-
-.heading-tertiary {
+  // font-size: 3.03vw;
   font-size: 4.4rem;
 }
 
-.heading-quatenary {
+.heading-tertiary {
+  // font-size: 2.2vw;
   font-size: 3.2rem;
 }
 
+.heading-quatenary {
+  // font-size: 1.67vw;
+  font-size: 2.4rem;
+}
+
 .text {
+  // font-size: 1.38vw;
   font-size: 2rem;
+
+  @include respond(tab-small) {
+    font-size: 1.5rem;
+  }
+  @include respond(phone) {
+    font-size: 1.25rem;
+  }
 
   &--secondary {
     font-weight: 300;
@@ -62,13 +105,13 @@ h4 {
 /* ANIMATION UTILITY CLASSES */
 
 .fade-in-content {
-  animation: fade-in 1s forwards !important;
-  visibility: hidden;
+  animation: fade-in 1s forwards ease-out !important;
+  // visibility: hidden;
   opacity: 0;
 }
 
 .fade-out-content {
-  animation: fade-out 1s forwards !important;
+  animation: fade-out 1s forwards ease-out !important;
 }
 
 /* KEYFRAMES */
@@ -88,20 +131,20 @@ h4 {
 @keyframes fade-in {
   0% {
     opacity: 0;
-    visibility: hidden;
+    // visibility: hidden;
   }
   100% {
     opacity: 1;
-    visibility: visible;
+    // visibility: visible;
   }
 }
 @keyframes fade-out {
   0% {
     opacity: 1;
-    visibility: visible;
+    // visibility: visible;
   }
   100% {
     opacity: 0;
-    visibility: hidden;
+    // visibility: hidden;
   }
 }
