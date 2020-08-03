@@ -26,7 +26,9 @@ h4 {
   margin: 0; }
 
 .heading-primary {
-  font-size: 6rem; }
+  font-size: 6rem;
+  text-transform: uppercase;
+  letter-spacing: 10px; }
 
 .heading-secondary {
   font-size: 4.4rem; }
@@ -50,6 +52,9 @@ h4 {
       font-size: 1.25rem; } }
   .text--secondary {
     font-weight: 300; }
+
+.author {
+  margin: 0; }
 
 /* UTILITY CLASSES */
 .u-mg-0 {
@@ -100,13 +105,19 @@ h4 {
   align-items: center; }
 
 .bg-overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+  background-image: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
+  background-size: cover;
   opacity: 1;
-  height: 100%;
-  width: 100%; }
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 .current-day {
   width: 100%;
@@ -166,10 +177,13 @@ h4 {
 
 .current-day__img {
   transform: scale(1.5); }
-  @media only screen and (max-width: 93.75em) {
+  @media only screen and (max-width: 56.25em) {
     .current-day__img {
-      margin-bottom: 0;
-      margin-top: 1rem; } }
+      transform: scale(2); } }
+  @media only screen and (max-width: 31.25em) {
+    .current-day__img {
+      margin-right: 2rem;
+      transform: scale(3); } }
 
 .current-day__desc {
   font-weight: 300;
@@ -294,10 +308,6 @@ h4 {
     .icon {
       width: 8vw;
       height: 8vw; } }
-  @media only screen and (max-width: 56.25em) {
-    .icon {
-      width: 10vw;
-      height: 10vw; } }
 
 .data-refresh {
   display: inline-block;

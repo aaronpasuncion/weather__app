@@ -66,9 +66,13 @@
   &__img {
     transform: scale(1.5);
 
-    @include respond(laptop) {
-      margin-bottom: 0;
-      margin-top: 1rem;
+    @include respond(tab-port) {
+      transform: scale(2);
+    }
+
+    @include respond(phone) {
+      margin-right: 2rem;
+      transform: scale(3);
     }
   }
 
@@ -249,10 +253,6 @@
   @include respond(tab-land) {
     width: 8vw;
     height: 8vw;
-  }
-  @include respond(tab-port) {
-    width: 10vw;
-    height: 10vw;
   }
 }
 

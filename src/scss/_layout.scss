@@ -17,13 +17,19 @@
 }
 
 .bg-overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+  background-image: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
+  background-size: cover;
   opacity: 1;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .current-day {
