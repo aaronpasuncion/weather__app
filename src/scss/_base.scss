@@ -79,6 +79,10 @@ h4 {
 .heading-quatenary {
   // font-size: 1.67vw;
   font-size: 2.4rem;
+
+  @include respond(tab-port) {
+    font-size: 2rem;
+  }
 }
 
 .text {

@@ -47,8 +47,8 @@ const weatherData = async (refresh = false) => {
             cur.classList.remove("fade-out-content");
             cur.classList.add("fade-in-content");
           });
-        }, 1250);
-      }, 1250);
+        }, 1750);
+      }, 1750);
     } else {
       elements.boxes.forEach((cur) => {
         cur.classList.add("skeleton-loader");

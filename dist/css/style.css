@@ -36,6 +36,9 @@ h4 {
 
 .heading-quatenary {
   font-size: 2.4rem; }
+  @media only screen and (max-width: 56.25em) {
+    .heading-quatenary {
+      font-size: 2rem; } }
 
 .text {
   font-size: 2rem; }
@@ -82,11 +85,8 @@ h4 {
     opacity: 0; } }
 
 .site-wrapper {
-  width: 75vw;
+  width: 85vw;
   margin: 0 auto; }
-  @media only screen and (max-width: 75em) {
-    .site-wrapper {
-      width: 85vw; } }
   @media only screen and (max-width: 75em) {
     .site-wrapper {
       width: 90vw; } }
@@ -98,9 +98,6 @@ h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
-  @media only screen and (max-width: 93.75em) {
-    .main-content {
-      justify-content: flex-start; } }
 
 .bg-overlay {
   position: absolute;
@@ -142,7 +139,7 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 30%;
+  width: 33%;
   margin-right: 3rem;
   background: linear-gradient(-225deg, rgba(203, 186, 204, 0.85) 0%, rgba(37, 128, 179, 0.85) 100%), url("../img/bg.jpg") center no-repeat;
   background-size: cover; }
@@ -152,16 +149,12 @@ h4 {
       padding: 3rem;
       width: 100%;
       background-position: 50% 40%; } }
-  @media only screen and (max-width: 56.25em) {
-    .current-day__summary {
-      padding: 4rem;
-      height: 40vh; } }
   @media only screen and (max-width: 48em) {
     .current-day__summary {
       height: 50vh; } }
   @media only screen and (max-width: 31.25em) {
     .current-day__summary {
-      height: 80vh; } }
+      height: 60vh; } }
 
 .current-day__forecast {
   display: flex;
@@ -172,7 +165,6 @@ h4 {
   margin: 0; }
 
 .current-day__img {
-  margin-bottom: 1.6vw;
   transform: scale(1.5); }
   @media only screen and (max-width: 93.75em) {
     .current-day__img {
@@ -188,10 +180,6 @@ h4 {
     .current-day__desc {
       font-size: 1.5rem; } }
 
-.current-day__icon {
-  width: 8vw;
-  height: 8vw; }
-
 .current-day__info {
   display: flex;
   flex-direction: column; }
@@ -206,12 +194,20 @@ h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   padding: 3.2vw;
   width: 33.3333%; }
   .current-day__stat:not(:last-child) {
     margin-right: 3rem; }
+  @media only screen and (max-width: 56.25em) {
+    .current-day__stat:not(:last-child) {
+      margin-right: 1rem; } }
+
+@media only screen and (max-width: 56.25em) {
+  .current-day__stat-head {
+    margin-bottom: 0.5rem; } }
 
 .current-day__stat-desc {
   margin: 0; }
@@ -221,14 +217,19 @@ h4 {
   justify-content: space-between;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
   border-radius: 15px;
-  overflow: hidden;
-  padding: 2.4vw 1.6vw; }
+  padding: 2.4vw 1.6vw;
+  overflow-x: auto; }
   @media only screen and (max-width: 93.75em) {
     .current-day__hourly {
       padding: 2.4vw; } }
   @media only screen and (max-width: 56.25em) {
     .current-day__hourly {
-      padding: 3.2vw; } }
+      padding: 2rem 0;
+      box-shadow: none;
+      border-radius: 0;
+      border-top: 3px solid rgba(255, 255, 255, 0.3);
+      border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+      position: relative; } }
 
 .current-day__hourly-forecast {
   text-align: center; }

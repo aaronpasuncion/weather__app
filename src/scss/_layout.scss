@@ -1,10 +1,7 @@
 .site-wrapper {
-  width: 75vw;
+  width: 85vw;
   margin: 0 auto;
 
-  @include respond(tab-land) {
-    width: 85vw;
-  }
   @include respond(tab-land) {
     width: 90vw;
   }
@@ -17,10 +14,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  @include respond(laptop) {
-    justify-content: flex-start;
-  }
 }
 
 .bg-overlay {

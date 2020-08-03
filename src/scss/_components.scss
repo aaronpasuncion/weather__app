@@ -28,7 +28,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30%;
+    width: 33%;
     margin-right: 3rem;
     background: linear-gradient(
         -225deg,
@@ -45,15 +45,11 @@
       background-position: 50% 40%;
     }
 
-    @include respond(tab-port) {
-      padding: 4rem;
-      height: 40vh;
-    }
     @include respond(tab-small) {
       height: 50vh;
     }
     @include respond(phone) {
-      height: 80vh;
+      height: 60vh;
     }
   }
 
@@ -68,7 +64,6 @@
   }
 
   &__img {
-    margin-bottom: 1.6vw;
     transform: scale(1.5);
 
     @include respond(laptop) {
@@ -87,11 +82,6 @@
     @include respond(tab-small) {
       font-size: 1.5rem;
     }
-  }
-
-  &__icon {
-    width: 8vw;
-    height: 8vw;
   }
 
   // current day info (RIGHT SIDE)
@@ -113,6 +103,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     box-shadow: $shadow;
     border-radius: $radius;
@@ -121,6 +112,18 @@
 
     &:not(:last-child) {
       margin-right: 3rem;
+    }
+
+    @include respond(tab-port) {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__stat-head {
+    @include respond(tab-port) {
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -134,15 +137,21 @@
     justify-content: space-between;
     box-shadow: $shadow;
     border-radius: $radius;
-    overflow: hidden;
+    // overflow: hidden;
     padding: 2.4vw 1.6vw;
+    overflow-x: auto;
 
     @include respond(laptop) {
       padding: 2.4vw;
     }
 
     @include respond(tab-port) {
-      padding: 3.2vw;
+      padding: 2rem 0;
+      box-shadow: none;
+      border-radius: 0;
+      border-top: 3px solid rgba(#fff, 0.3);
+      border-bottom: 3px solid rgba(#fff, 0.3);
+      position: relative;
     }
   }
 
