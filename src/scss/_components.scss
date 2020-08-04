@@ -214,7 +214,7 @@
       padding: 2vw;
     }
     @include respond(tab-port) {
-      padding: 0;
+      padding: 1rem;
     }
 
     @include respond(tab-small) {
