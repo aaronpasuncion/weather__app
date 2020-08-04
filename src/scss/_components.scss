@@ -64,14 +64,17 @@
   }
 
   &__img {
-    transform: scale(1.5);
+    transform: scale(1.5) translateX(2rem) translateY(-0.5rem);
 
+    @include respond(laptop) {
+      transform: scale(1.5) translateX(1rem);
+    }
     @include respond(tab-port) {
       transform: scale(2);
     }
 
     @include respond(phone) {
-      margin-right: 2rem;
+      // margin-right: 2rem;
       transform: scale(3);
     }
   }
@@ -220,6 +223,10 @@
       justify-content: space-around;
       margin-bottom: 1rem;
       padding: 0;
+
+      & > * {
+        width: 33.3333%;
+      }
     }
   }
 
