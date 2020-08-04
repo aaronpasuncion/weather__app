@@ -1,0 +1,351 @@
+/* VARIABLES */
+/* MIXINS */
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif; }
+
+body {
+  margin: 0;
+  background-image: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh; }
+  @media only screen and (max-width: 93.75em) {
+    body {
+      padding: 5vw 0; } }
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+  margin: 0; }
+
+.heading-primary {
+  font-size: 6rem;
+  text-transform: uppercase;
+  letter-spacing: 10px; }
+
+.heading-secondary {
+  font-size: 4.4rem; }
+
+.heading-tertiary {
+  font-size: 3.2rem; }
+
+.heading-quatenary {
+  font-size: 2.4rem; }
+  @media only screen and (max-width: 56.25em) {
+    .heading-quatenary {
+      font-size: 2rem; } }
+
+.text {
+  font-size: 2rem; }
+  @media only screen and (max-width: 48em) {
+    .text {
+      font-size: 1.5rem; } }
+  @media only screen and (max-width: 31.25em) {
+    .text {
+      font-size: 1.25rem; } }
+  .text--secondary {
+    font-weight: 300; }
+
+.author {
+  margin: 0; }
+
+/* UTILITY CLASSES */
+.u-mg-0 {
+  margin: 0; }
+
+/* ANIMATION UTILITY CLASSES */
+.fade-in-content {
+  animation: fade-in 1s forwards ease-out !important;
+  opacity: 0; }
+
+.fade-out-content {
+  animation: fade-out 1s forwards ease-out !important; }
+
+/* KEYFRAMES */
+@keyframes skeleton-loader {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.site-wrapper {
+  width: 85vw;
+  margin: 0 auto; }
+  @media only screen and (max-width: 75em) {
+    .site-wrapper {
+      width: 90vw; } }
+
+.main-content {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
+  background-size: cover;
+  opacity: 1;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.current-day {
+  width: 100%;
+  margin-bottom: 3rem; }
+
+.upcoming-weather {
+  width: 100%; }
+
+/* CURRENT DAY */
+.current-day__container {
+  display: flex;
+  justify-content: space-between; }
+  @media only screen and (max-width: 93.75em) {
+    .current-day__container {
+      flex-direction: column; } }
+
+.current-day__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; }
+  @media only screen and (max-width: 93.75em) {
+    .current-day__header {
+      margin-bottom: 2rem; } }
+
+.current-day__summary {
+  padding: 1.6vw 3.2vw;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 33%;
+  margin-right: 3rem;
+  background: linear-gradient(-225deg, rgba(203, 186, 204, 0.85) 0%, rgba(37, 128, 179, 0.85) 100%), url("../img/bg.jpg") center no-repeat;
+  background-size: cover; }
+  @media only screen and (max-width: 93.75em) {
+    .current-day__summary {
+      margin-bottom: 3rem;
+      padding: 3rem;
+      width: 100%;
+      background-position: 50% 40%; } }
+  @media only screen and (max-width: 48em) {
+    .current-day__summary {
+      height: 50vh; } }
+  @media only screen and (max-width: 31.25em) {
+    .current-day__summary {
+      height: 60vh; } }
+
+.current-day__forecast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.current-day__date {
+  margin: 0; }
+
+.current-day__img {
+  transform: scale(1.5) translateX(2rem) translateY(-0.5rem); }
+  @media only screen and (max-width: 93.75em) {
+    .current-day__img {
+      transform: scale(1.5) translateX(1rem); } }
+  @media only screen and (max-width: 56.25em) {
+    .current-day__img {
+      transform: scale(2); } }
+  @media only screen and (max-width: 31.25em) {
+    .current-day__img {
+      transform: scale(3); } }
+
+.current-day__desc {
+  font-weight: 300;
+  font-size: 3rem;
+  margin: 0;
+  margin-top: -1rem; }
+  @media only screen and (max-width: 48em) {
+    .current-day__desc {
+      font-size: 1.5rem; } }
+
+.current-day__info {
+  display: flex;
+  flex-direction: column; }
+
+.current-day__statistics {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem; }
+
+.current-day__stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 3.2vw;
+  width: 33.3333%; }
+  .current-day__stat:not(:last-child) {
+    margin-right: 3rem; }
+  @media only screen and (max-width: 56.25em) {
+    .current-day__stat:not(:last-child) {
+      margin-right: 1rem; } }
+
+@media only screen and (max-width: 56.25em) {
+  .current-day__stat-head {
+    margin-bottom: 0.5rem; } }
+
+.current-day__stat-desc {
+  margin: 0; }
+
+.current-day__hourly {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 2.4vw 1.6vw;
+  overflow-x: auto; }
+  @media only screen and (max-width: 93.75em) {
+    .current-day__hourly {
+      padding: 2.4vw; } }
+  @media only screen and (max-width: 56.25em) {
+    .current-day__hourly {
+      padding: 2rem 0;
+      box-shadow: none;
+      border-radius: 0;
+      border-top: 3px solid rgba(255, 255, 255, 0.3);
+      border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+      position: relative; } }
+
+.current-day__hourly-forecast {
+  text-align: center; }
+  .current-day__hourly-forecast:not(:last-child) {
+    margin-right: 1rem; }
+  @media only screen and (max-width: 48em) {
+    .current-day__hourly-forecast:not(:last-child) {
+      margin-right: 3rem; } }
+
+/* UPCOMING WEATHER */
+.upcoming-weather h3 {
+  margin-bottom: 2rem; }
+
+.upcoming-weather__container {
+  display: flex;
+  justify-content: space-between; }
+  @media only screen and (max-width: 48em) {
+    .upcoming-weather__container {
+      flex-direction: column; } }
+
+.upcoming-weather__box {
+  border-radius: 15px;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
+  padding: 1.6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; }
+  @media only screen and (max-width: 93.75em) {
+    .upcoming-weather__box {
+      padding: 1.4vw; } }
+  @media only screen and (max-width: 75em) {
+    .upcoming-weather__box {
+      padding: 2vw; } }
+  @media only screen and (max-width: 56.25em) {
+    .upcoming-weather__box {
+      padding: 1rem; } }
+  @media only screen and (max-width: 48em) {
+    .upcoming-weather__box {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 1rem;
+      padding: 0; }
+      .upcoming-weather__box > * {
+        width: 33.3333%; } }
+
+.upcoming-weather__temp {
+  margin-left: 1rem; }
+  @media only screen and (max-width: 48em) {
+    .upcoming-weather__temp {
+      order: 1; } }
+
+@media only screen and (max-width: 48em) {
+  .upcoming-weather__day {
+    order: -1; } }
+
+/* ICON */
+.icon {
+  width: 6vw;
+  height: 6vw;
+  filter: invert(100%) sepia(0%) saturate(2498%) hue-rotate(39deg) brightness(113%) contrast(87%) opacity(0.8); }
+  @media only screen and (max-width: 75em) {
+    .icon {
+      width: 8vw;
+      height: 8vw; } }
+
+.data-refresh {
+  display: inline-block;
+  margin-left: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  transition: 0.2s all; }
+  .data-refresh:hover, .data-refresh:active {
+    transform: rotate(360deg) scale(1.05); }
+
+/* BOX */
+.skeleton-loader {
+  animation: fade-in 1s ease-out forwards;
+  opacity: 0;
+  position: relative;
+  overflow: hidden; }
+  .skeleton-loader::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #cbbacc;
+    z-index: 2; }
+  .skeleton-loader::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(-225deg, rgba(203, 186, 204, 0.8) 0%, rgba(37, 128, 179, 0.8) 100%);
+    z-index: 3;
+    opacity: 0;
+    animation: skeleton-loader 2s infinite ease-in-out 1s; }
